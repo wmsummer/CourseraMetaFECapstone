@@ -1,5 +1,5 @@
 import './App.css';
-
+import {Link} from 'react-router-dom';
 
 function Nav() {
     return (
@@ -11,11 +11,11 @@ function Nav() {
             </div>
             <div className="span6">
                 <ul style={{display: 'flex', listStyleType: 'none'}}>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Reservations</a></li>
-                    <li><a href="#">Order Online</a></li>
-                    <li><a href="#">Login</a></li>
+                    <li><Link to="/" style={{color: '#495E57', textDecoration: 'none'}}>Home</Link></li>
+                    <li><Link to="/about" style={{color: '#495E57', textDecoration: 'none'}}>About</Link></li>
+                    <li><Link to="/reservations" style={{color: '#495E57', textDecoration: 'none'}}>Reservations</Link></li>
+                    <li><Link to="/orderonline" style={{color: '#495E57', textDecoration: 'none'}}>Order Online</Link></li>
+                    <li><Link to="/login" style={{color: '#495E57', textDecoration: 'none'}}>Login</Link></li>
                 </ul>
             </div>
 
