@@ -1,4 +1,4 @@
-
+import './App.css';
 
 
 function Nav() {
@@ -11,12 +11,11 @@ function Nav() {
             </div>
             <div className="span6">
                 <ul style={{display: 'flex', listStyleType: 'none'}}>
-                    <li style={{marginRight: '20px'}}><a href="#" style={{color: '#495E57', textDecoration: 'none'}}>Home</a></li>
-                    <li style={{marginRight: '20px'}}><a href="#" style={{color: '#495E57', textDecoration: 'none'}}>About</a></li>
-                    <li style={{marginRight: '20px'}}><a href="#" style={{color: '#495E57', textDecoration: 'none'}}>Menu</a></li>
-                    <li style={{marginRight: '20px'}}><a href="#" style={{color: '#495E57', textDecoration: 'none'}}>Reservations</a></li>
-                    <li style={{marginRight: '20px'}}><a href="#" style={{color: '#495E57', textDecoration: 'none'}}>Order Online</a></li>
-                    <li style={{marginRight: '20px'}}><a href="#" style={{color: '#495E57', textDecoration: 'none'}}>Login</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Reservations</a></li>
+                    <li><a href="#">Order Online</a></li>
+                    <li><a href="#">Login</a></li>
                 </ul>
             </div>
 
