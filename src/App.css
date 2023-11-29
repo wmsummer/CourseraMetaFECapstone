@@ -10,6 +10,11 @@
 
 }
 
+.span12 {
+  grid-column: span 12;
+}
+
+
 .span8 {
   grid-column: span 8;
 }
@@ -20,6 +25,10 @@
 
 .span4 {
   grid-column: span 4;
+}
+
+.span3 {
+  grid-column: span 3;
 }
 
 .span2 {
@@ -50,3 +59,12 @@ h3 {
   margin-top: 0px;
 }
 
+label {
+  color: white;
+}
+
+.footerLinks {
+  color: #495E57;
+  padding: 2px;
+  margin: 0px;
+}

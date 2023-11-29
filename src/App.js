@@ -10,6 +10,7 @@ import Main from './Main';
 import About from './components/About';
 import Reservations from './components/Reservations';
 import OrderOnline from './components/OrderOnline';
+import Login from './components/Login';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/reservations" element={<Reservations />} />
         <Route path="/orderonline" element={<OrderOnline />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       <Footer />
     </>
