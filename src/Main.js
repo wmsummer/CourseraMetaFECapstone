@@ -129,7 +129,7 @@ function Main() {
                 <h1>Little Lemon</h1>
                 <h3>Chicago</h3>
                 <p style={{color: 'white'}}>We are a family owned Mediterranean restaurant, focused on traditional recipies served with a modern twist.</p>
-                <Link to="/reservations" style={{backgroundColor: '#F4CE14', color: 'black', border: 'none', padding: '10px', borderRadius: '5px'}}>
+                <Link to="/reservations" style={{backgroundColor: '#F4CE14', color: 'black', border: 'none', padding: '10px', borderRadius: '5px'}} aria-label="On Click">
                     Reserve a Table
                 </Link>
             </div>

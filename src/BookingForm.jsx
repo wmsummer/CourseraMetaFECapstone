@@ -37,25 +37,21 @@ function BookingForm(props) {
                     value={props.booking.date}
                     id="date" onChange={(e) => props.setBooking({...props.booking, date: e.target.value})} 
                     {...formik.getFieldProps('date')}
-                    
-
                 />
                 {formik.errors.date && formik.touched.date &&
-                <p style={{color:'red', margin:'0px'}}>*Required Date</p>}
+                <p style={{color:'red', margin:'0px'}}>Please select a date</p>}
             </div>
             <div style={{paddingBottom: "10px"}}>
                 <label htmlFor="time">Choose time</label>
                 <br />
                 <select id="time" onChange={(e) => props.setBooking({...props.booking, time: e.target.value})}
-                          {...formik.getFieldProps('time')}>
+                    {...formik.getFieldProps('time')}>
                     {props.availableTimes.map((time, index) => {
-                        return <option key={index} value={time}>{time}</option>
+                        return <option key={index} value={time}>{time}</option>})
                     }
-                    )}
-
                 </select>
                 {formik.errors.time && formik.touched.time &&
-                <p style={{color:'red', margin:'0px'}}>*Required Time</p>}
+                <p style={{color:'red', margin:'0px'}}>Please select a time</p>}
             </div>
             <div style={{paddingBottom: "10px"}}>
                 <label htmlFor="guests">Number of guests</label>
@@ -70,13 +66,14 @@ function BookingForm(props) {
                 )}
             </select>
             </div>
-            <br />
             <input type="submit" value="Make Your Reservation" 
-            style={!formik.isValid || !formik.dirty ? {backgroundColor: '#F4CE14', color: 'gray', marginTop: '10px', border: 'none', padding: '5px', borderRadius: '5px', width: '150px', cursor: 'not-allowed'
-        } : {backgroundColor: '#F4CE14', color: 'black', marginTop: '10px', border: 'none', padding: '5px', borderRadius: '5px', width: '150px', cursor: 'pointer'}}
-            onClick={handleSubmit}
-            disabled={!formik.isValid || !formik.dirty}
-            ></input>
+                style={!formik.isValid || !formik.dirty ? {backgroundColor: '#F4CE14', color: 'gray', marginTop: '10px', border: 'none', padding: '5px', borderRadius: '5px', width: '150px', cursor: 'not-allowed'
+                } : {backgroundColor: '#F4CE14', color: 'black', marginTop: '10px', border: 'none', padding: '5px', borderRadius: '5px', width: '150px', cursor: 'pointer'}}
+                onClick={handleSubmit}
+                disabled={!formik.isValid || !formik.dirty}
+                aria-label="On Click"
+                >
+            </input>
         </form>
         {/* <pre>{JSON.stringify(formik.values, null, 2)}</pre>
         <pre>{JSON.stringify(props.booking, null, 2)}</pre> */}
