@@ -135,7 +135,7 @@ function Main() {
             </div>
             <div className="span4">
                 <img src='mainHero.jpg' alt='mainHero' 
-                style={{width: '20vw', height: '40vh',
+                style={{width: '350px', height: '400px',
                  borderRadius:"15px", position:"relative", top:"30px", left: "40px"
                  }}/>
             </div>

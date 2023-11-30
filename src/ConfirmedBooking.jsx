@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function BookingConfirmation(props) {
+function ConfirmedBooking(props) {
 
 
 
@@ -23,4 +23,4 @@ function BookingConfirmation(props) {
     );
   }
   
-  export default BookingConfirmation;
+  export default ConfirmedBooking;

@@ -68,3 +68,38 @@ label {
   padding: 2px;
   margin: 0px;
 }
+
+@media (max-width: 768px) {
+  /* Adjust styles for screens 768px and below */
+  body {
+    font-size: 14px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .span8, .span6, .span4, .span3, .span2 {
+    grid-column: span 12; /* Full width for smaller screens */
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Adjust styles for screens between 769px and 1024px */
+
+    body {
+    font-size: 14px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .span8, .span6, .span4, .span3, .span2 {
+    grid-column: span 6; /* Full width for smaller screens */
+  }
+
+  .grid {
+    gap: 20px;
+  }
+}

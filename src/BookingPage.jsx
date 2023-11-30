@@ -1,11 +1,14 @@
 import { useState, useReducer } from 'react';
 import BookingForm from './BookingForm.jsx';
-import BookingConfirmation from './BookingConfirmation.jsx';
+import ConfirmedBooking from './ConfirmedBooking.jsx';
+
+import { fetchAPI, submitAPI } from './api.js';
 
 
 
 const reducer = (state, action) => {
     if (action.type === 'updateTimes') {
+        // console.log(action.payload);
         return action.payload;
     }
     return state;
@@ -23,15 +26,18 @@ function BookingPage() {
     const [confirmed, setConfirmed] = useState(false);
     
     function initializeTimes() {
-        const times = ['17:00', '18:00', '19:00', '20:00', , '21:00', '22:00'];
+        const times = [];
         return times;
     }
 
-    const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());
+    const [availableTimes, dispatch] = useReducer(reducer, initializeTimes());
 
-    function updateTimes() {
-        dispatch({type: 'updateTimes', payload: ['17:00', '18:00', '19:00', '20:00', , '21:00', '22:00']})
+
+    function updateDate() {
+        dispatch({type: 'updateTimes', payload: fetchAPI(booking.date)['availableTimes']})
     }
+
+
 
     
     return (
@@ -48,11 +54,14 @@ function BookingPage() {
                     booking={booking}
                     setBooking={setBooking}
                     setConfirmed={setConfirmed}
+                    updateDate={updateDate}
                     />
                     </>:
-                    <BookingConfirmation 
+                    <ConfirmedBooking 
                     booking={booking}
                     setConfirmed={setConfirmed}
+                    submitAPI={submitAPI}
+
                     />}
             </div>
         </div>

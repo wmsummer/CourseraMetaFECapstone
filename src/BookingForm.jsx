@@ -4,6 +4,18 @@ import * as Yup from 'yup';
 
 function BookingForm(props) {
 
+    const getCurrentDate = () => {
+        const today = new Date();
+        const year = today.getFullYear();
+        let month = today.getMonth() + 1;
+        let day = today.getDate();
+
+        month = month < 10 ? `0${month}` : month;
+        day = day < 10 ? `0${day}` : day;
+    
+        return `${year}-${month}-${day}`;
+    };
+
 
 
     const occasions = [
@@ -13,9 +25,16 @@ function BookingForm(props) {
 
     function handleSubmit(e) {
         e.preventDefault();
+        // console.log(props.submitAPI);
         props.setConfirmed(true);
         props.setBooking({...props.booking, date: formik.values.date, time: formik.values.time, guestCount: formik.values.guestCount, occasion: formik.values.occasion})
     }   
+
+    function handleDateChange(e) {
+        props.setBooking({...props.booking, date: e.target.value});
+        props.updateDate({type: 'updateTimes', payload: e.target.value})
+        formik.handleChange(e);
+    }
 
     const formik = useFormik({
         initialValues: props.booking,
@@ -35,8 +54,10 @@ function BookingForm(props) {
                 <label htmlFor='date'>Choose date</label>
                 <input type="date" 
                     value={props.booking.date}
-                    id="date" onChange={(e) => props.setBooking({...props.booking, date: e.target.value})} 
-                    {...formik.getFieldProps('date')}
+                    id="date" 
+                    onChange={handleDateChange}
+                    onBlur={formik.handleBlur}
+                    min={ getCurrentDate() }
                 />
                 {formik.errors.date && formik.touched.date &&
                 <p style={{color:'red', margin:'0px'}}>Please select a date</p>}
@@ -44,12 +65,13 @@ function BookingForm(props) {
             <div style={{paddingBottom: "10px"}}>
                 <label htmlFor="time">Choose time</label>
                 <br />
+                {props.availableTimes.length > 0 &&
                 <select id="time" onChange={(e) => props.setBooking({...props.booking, time: e.target.value})}
                     {...formik.getFieldProps('time')}>
                     {props.availableTimes.map((time, index) => {
                         return <option key={index} value={time}>{time}</option>})
                     }
-                </select>
+                </select>}
                 {formik.errors.time && formik.touched.time &&
                 <p style={{color:'red', margin:'0px'}}>Please select a time</p>}
             </div>
