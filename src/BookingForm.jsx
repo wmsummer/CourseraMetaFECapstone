@@ -65,24 +65,30 @@ function BookingForm(props) {
             <div style={{paddingBottom: "10px"}}>
                 <label htmlFor="time">Choose time</label>
                 <br />
-                {props.availableTimes.length > 0 &&
+                {props.availableTimes.length > 0 ?
                 <select id="time" onChange={(e) => props.setBooking({...props.booking, time: e.target.value})}
                     {...formik.getFieldProps('time')}>
                     {props.availableTimes.map((time, index) => {
                         return <option key={index} value={time}>{time}</option>})
                     }
-                </select>}
+                </select>:
+                <select id="time" onChange={(e) => props.setBooking({...props.booking, time: e.target.value})}
+                    {...formik.getFieldProps('time')}>
+                    <option value="">Select a date first</option>
+                </select>
+                
+            }
                 {formik.errors.time && formik.touched.time &&
                 <p style={{color:'red', margin:'0px'}}>Please select a time</p>}
             </div>
             <div style={{paddingBottom: "10px"}}>
-                <label htmlFor="guests">Number of guests</label>
-                <input type="number" placeholder="2" min="1" max="10" id="guests" onChange={(e) => props.setBooking({...props.booking, guestCount: e.target.value})}
+                <label htmlFor="guestCount">Number of guests</label>
+                <input type="number" placeholder="2" min="1" max="10" id="guestCount" onChange={handleDateChange}
                 />
             </div>
             <div style={{paddingBottom: "10px"}}>
             <label htmlFor="occasion">Occasion</label>
-            <select id="occasion" onChange={(e) => props.setBooking({...props.booking, occasion: e.target.value})}>
+            <select id="occasion" onChange={handleDateChange}>
                 {occasions.map((occasion, index) => {
                     return <option key={index} value={occasion}>{occasion}</option>}
                 )}
