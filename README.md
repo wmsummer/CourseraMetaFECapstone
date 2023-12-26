@@ -1,11 +1,11 @@
 # This is a Capstone Project for Coursera Meta Front-End Developer Professional Certificate
 
 This project is meant to hightlight and demonstate the following skills for a fictional restaurant Little Lemon
--HTML
--UI/UX design
--JavaScript
--Cascading Style Sheets (CSS)
--React
+- HTML
+- UI/UX design
+- JavaScript
+- Cascading Style Sheets (CSS)
+- React
 
 ### `npm start`
 
