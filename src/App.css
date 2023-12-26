@@ -2,7 +2,6 @@
   margin: 5px;
 }
 
-
 .grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -14,7 +13,6 @@
 .span12 {
   grid-column: span 12;
 }
-
 
 .span8 {
   grid-column: span 8;
@@ -71,7 +69,6 @@ label {
 }
 
 @media (max-width: 768px) {
-  /* Adjust styles for screens 768px and below */
   body {
     font-size: 14px;
   }
@@ -81,13 +78,11 @@ label {
   }
 
   .span8, .span6, .span4, .span3, .span2 {
-    grid-column: span 12; /* Full width for smaller screens */
+    grid-column: span 12;
   }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-  /* Adjust styles for screens between 769px and 1024px */
-
     body {
     font-size: 14px;
   }
@@ -97,7 +92,7 @@ label {
   }
 
   .span8, .span6, .span4, .span3, .span2 {
-    grid-column: span 6; /* Full width for smaller screens */
+    grid-column: span 6;
   }
 
   .grid {
