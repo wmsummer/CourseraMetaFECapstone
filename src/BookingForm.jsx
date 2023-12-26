@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useFormik } from "formik";
 import * as Yup from 'yup';
 
@@ -95,8 +94,7 @@ function BookingForm(props) {
             </select>
             </div>
             <input type="submit" value="Make Your Reservation" 
-                style={!formik.isValid || !formik.dirty ? {backgroundColor: '#F4CE14', color: 'gray', marginTop: '10px', border: 'none', padding: '5px', borderRadius: '5px', width: '150px', cursor: 'not-allowed'
-                } : {backgroundColor: '#F4CE14', color: 'black', marginTop: '10px', border: 'none', padding: '5px', borderRadius: '5px', width: '150px', cursor: 'pointer'}}
+                style={!formik.isValid || !formik.dirty ? {backgroundColor: '#F4CE14', color: 'gray', marginTop: '10px', border: 'none', padding: '5px', borderRadius: '5px', width: '150px', cursor: 'not-allowed'} : {backgroundColor: '#F4CE14', color: 'black', marginTop: '10px', border: 'none', padding: '5px', borderRadius: '5px', width: '150px', cursor: 'pointer'}}
                 onClick={handleSubmit}
                 disabled={!formik.isValid || !formik.dirty}
                 aria-label="On Click"

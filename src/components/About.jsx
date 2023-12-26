@@ -15,9 +15,9 @@ function About() {
                 <div className="span2" style={{ marginBottom:"10px"}} ></div>
                 <div className="span4" style={{alignContent: 'center', textAlign: 'center', marginBottom:"10px"}} >
                     <img src='Mario and Adrian A.jpg' alt='Mario and Adrian A'
-                    style={{height: '40vh', position:"relative", top:"30px", right:"200px"}}></img>
+                    style={{height: '40vh', position:"relative", top:"30px", right:"200px", borderRadius:"15px"}}></img>
                     <img src='Mario and Adrian B.jpg' alt='Mario and Adrian B'
-                    style={{height: '40vh', position:"relative", bottom:"90px", right:"140px"}}
+                    style={{height: '40vh', position:"relative", bottom:"90px", right:"140px", borderRadius:"15px"}}
                      ></img>
                 </div>
 

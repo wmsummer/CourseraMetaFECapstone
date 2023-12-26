@@ -5,7 +5,7 @@ function Footer() {
   return (
     <footer className="grid" style={{marginTop: '30px', marginBottom: '10px', padding:'5px'}}>
         <div className="span2"></div>
-        <div className="span2" >
+        <div className="span1" >
           <Link to="/" style={{color: '#495E57', textDecoration: 'none'}}>
             <img src="FooterLogo.png" alt="logo" style={{height: '75px'}}/>
             </Link>
@@ -25,10 +25,11 @@ function Footer() {
             </Link>
         </div>
         <div className="span2">
-            <p className="footerLinks">Phone: 123-456-7890</p>
+            <p className="footerLinks">Phone: 312-867-5309</p>
             <p className="footerLinks">Email: info@littlelemon.com</p>
-            <p className="footerLinks">Address: 1234 Main St, Chicago, IL 60601</p>
+            <p className="footerLinks">Address: 1234 Michigan Ave, Chicago, IL 60601</p>
             </div>
+            <div className="span1"></div>
         <div className="span2">
             <p className="footerLinks">
               Follow Us:

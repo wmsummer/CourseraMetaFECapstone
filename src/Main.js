@@ -63,8 +63,8 @@ function Specials() {
             </div>
             <div className="span2">
                 <Link to="/orderonline" style={{backgroundColor: '#F4CE14', color: '#495E57', border: 'none', padding: '10px', borderRadius: '5px'}}
-               onMouseOver = {e => {e.target.style.backgroundColor = '#495E57'; e.target.style.color = '#F4CE14';}} onMouseOut = {e => {e.target.style.backgroundColor = '#F4CE14'; e.target.style.color = '#495E57';}} aria-label="On Click"
-                >
+                    onMouseOver = {e => {e.target.style.backgroundColor = '#495E57'; e.target.style.color = '#F4CE14';}} 
+                    onMouseOut = {e => {e.target.style.backgroundColor = '#F4CE14'; e.target.style.color = '#495E57';}} aria-label="On Click">
                     Online Menu
                 </Link>
 
@@ -92,11 +92,11 @@ function SpecialCard(props) {
         <div className="span3" style={{marginBottom:"10px"}} >
             <img src={props.img} alt={props.alt} style={{width: '75%', height: 'auto', borderRadius:"15px", top:"30px"}}/>
             <div className="grid">
-                <div className="span8">
+                <div className="span6">
                     <h3 style={{ padding: "0px", color:"black"}}>{props.title}</h3>
                 </div>
                 <div className="span4">
-                    <p style={{marginTop: "0px", padding: "0px", color: 'black'}}>{props.price}</p>
+                    <p style={{marginTop: "0px",  padding: "0px", color: 'black'}}>{props.price}</p>
                 </div>
             </div>
             <p style={{color: 'black', marginRight: '80px'}}>{props.description}</p>
@@ -113,7 +113,7 @@ function SpecialCard(props) {
     return (
         <div className="span2" style={{marginBottom:"10px"}} >
             <h1>{props.rating}</h1>
-            <img src={props.img} alt={props.alt} style={{width: '200px', borderRadius:"15px", top:"30px"}}/>
+            <img src={props.img} alt={props.alt} style={{width: '100%', borderRadius:"15px", top:"30px"}}/>
             <div className="grid">
                 <div className="span8">
                     <h3 style={{ padding: "0px", color:"black"}}>{props.reviewerName}</h3>
@@ -141,8 +141,8 @@ function Main() {
             </div>
             <div className="span4">
                 <img src='mainHero.jpg' alt='mainHero' 
-                style={{width: '450px', height: 'auto',
-                 borderRadius:"15px", position:"relative", top:"30px", left: "40px"
+                style={{width: '100%', height: 'auto',
+                 borderRadius:"15px", position:"relative", top:"30px"
                  }}/>
             </div>
         </div>
